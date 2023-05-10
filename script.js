@@ -1,6 +1,13 @@
 const gridDiv = document.querySelector('#grid-div');
 
-createGrid(10);
+const btn = document.querySelector('#size');
+
+btn.addEventListener('click', () => {
+    let size = prompt("Enter a number between 1-100");
+    if (size >= 1 && size <= 100) {
+        createGrid(size);
+    }
+})
 
 function createGrid(gridSize) {
     gridDiv.style.setProperty('--columns-rows', gridSize);
